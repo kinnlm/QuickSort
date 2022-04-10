@@ -34,14 +34,14 @@ public class QuickSort003
 		return (i + 1);
 	}
 
-	void quickSort002(String[] list, int beginning, int end)
+	void quickSort003(String[] list, int beginning, int end)
 	{
 		++counter;
 		if (beginning < end)
 		{
 			int partIndex = partition(list, beginning, end);
-			quickSort002(list, beginning, partIndex - 1);
-			quickSort002(list, partIndex + 1, end);
+			quickSort003(list, beginning, partIndex - 1);
+			quickSort003(list, partIndex + 1, end);
 		}
 	}
 }

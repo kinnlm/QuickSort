@@ -8,46 +8,49 @@
  * This class - Quick sort for strings
  */
 
+import java.util.Arrays;
+
 /*
 @see https://www.javatpoint.com/quick-sort
 */
 public class QuickSortString
 {
-/**
- * @param counter count how many steps it takes to order data
- */
+	/**
+	 */
 	public int counter = 0;
 
-	int partition(String[] list, int beginning, int end)
+	public int partition(String[] list, int beginning, int end)
 	{
 		String pivot = list[end];
-		int i = beginning - 1;
+		int i = (beginning - 1);
 
-		for (int j = beginning; j <= end; j++)
+		for (int j = beginning; j < end - 1; j++)
 		{
-			if (list[i].compareTo(pivot) < 0)
+//			System.out.println(list[i].compareTo(pivot));
+			if (list[i].compareTo(pivot) <= 0)
 			{
 				i++;
 				String tempStorageVariable = list[i];
 				list[i] = list[j];
 				list[j] = tempStorageVariable;
 			}
+			System.out.println(Arrays.toString(list));
 		}
 
-		String storageVariable = list[i + 1];
+		String tempStorageVariable = list[i + 1];
 		list[i + 1] = list[end];
-		list[end] = storageVariable;
+		list[end] = tempStorageVariable;
 		return (i + 1);
 	}
 
-	void quickSort003(String[] list, int beginning, int end)
+	public void quickSortString(String[] list, int beginning, int end)
 	{
 		++counter;
 		if (beginning < end)
 		{
 			int partIndex = partition(list, beginning, end);
-			quickSort003(list, beginning, partIndex - 1);
-			quickSort003(list, partIndex + 1, end);
+			quickSortString(list, beginning, partIndex - 1);
+			quickSortString(list, partIndex + 1, end);
 		}
 	}
 }

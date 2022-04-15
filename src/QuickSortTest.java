@@ -8,8 +8,6 @@
  * This class -
  */
 
-import java.util.Arrays;
-
 public class QuickSortTest
 {
 	public static void main(String[] args)

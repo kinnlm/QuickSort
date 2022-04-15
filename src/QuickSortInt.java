@@ -5,21 +5,31 @@
  * Course ITEC 2150-07 Spring 2022
  * Written: Apr 10, 2022
  *
- * This class - Algorithm to order data something of a hybrid between a bubble sort and a binary search
+ * This class - Divide and conquer algorithm to order/sort data
  */
 
-// @see https://www.javatpoint.com/quick-sort
+/*
+ @see https://www.javatpoint.com/quick-sort
+      https://www.youtube.com/watch?v=3San3uKKHgg&ab_channel=kamalyassin
+      https://www.geeksforgeeks.org/quick-sort/
+*/
 
 import java.util.Arrays;
 
 public class QuickSortInt
 {
+	/**
+	 * @param list      data to be sorted
+	 * @param beginning number to be compared
+	 * @param end       pivot point
+	 *
+	 * @return moves quick sort along
+	 */
 	public int partition(int[] list, int beginning, int end)
 	{
-		int pivot = list[end];
-		int i = beginning - 1;
+		int pivot = list[end], i = (beginning - 1);
 
-		for (int j = beginning; j < end - 1; j++)
+		for (int j = beginning; j < (end - 1); j++)
 		{
 			if (list[i] <= pivot)
 			{

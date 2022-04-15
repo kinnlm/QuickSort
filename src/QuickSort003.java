@@ -8,8 +8,14 @@
  * This class - Quick sort for strings
  */
 
+/*
+@see https://www.javatpoint.com/quick-sort
+*/
 public class QuickSort003
 {
+/**
+ * @param counter count how many steps it takes to order data
+ */
 	public int counter = 0;
 
 	int partition(String[] list, int beginning, int end)

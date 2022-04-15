@@ -1,12 +1,14 @@
 /*
  * Class: QuickSort002.JAVA
  * @Author Logan Kinnaird
- * @Version
+ * @Version 1.0
  * Course ITEC 2150-07 Spring 2022
  * Written: Apr 10, 2022
  *
  * This class - Algorithim to order data something of a hybrid between a bubble sort and a binary sort
  */
+
+// @see https://www.javatpoint.com/quick-sort
 
 public class QuickSort002
 {

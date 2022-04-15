@@ -5,26 +5,23 @@
  * Course ITEC 2150-07 Spring 2022
  * Written: Apr 10, 2022
  *
- * This class - Algorithm to order data something of a hybrid between a bubble sort and a binary sort
+ * This class - Algorithm to order data something of a hybrid between a bubble sort and a binary search
  */
 
 // @see https://www.javatpoint.com/quick-sort
 
+import java.util.Arrays;
+
 public class QuickSortInt
 {
-/**
- * @param counter count how many steps it takes to order data
- */
-	public int counter = 0;
-
-	int partition(int[] list, int beginning, int end)
+	public int partition(int[] list, int beginning, int end)
 	{
 		int pivot = list[end];
 		int i = beginning - 1;
 
-		for (int j = beginning; j <= end; j++)
+		for (int j = beginning; j < end - 1; j++)
 		{
-			if (list[i] < pivot)
+			if (list[i] <= pivot)
 			{
 				i++;
 				int tempStorageVariable = list[i];
@@ -33,20 +30,22 @@ public class QuickSortInt
 			}
 		}
 
-		int storageVariable = list[i + 1];
+		int tempStorageVariable = list[i + 1];
 		list[i + 1] = list[end];
-		list[end] = storageVariable;
+		list[end] = tempStorageVariable;
 		return (i + 1);
 	}
 
-	void quickSort002(int[] list, int beginning, int end)
-	{   ++counter;
+	public void quickSortInt(int[] list, int beginning, int end)
+	{
+		System.out.println(Arrays.toString(list) + '\n');
 		if (beginning < end)
 		{
 			int partIndex = partition(list, beginning, end);
-			quickSort002(list, beginning, partIndex - 1);
-			quickSort002(list, partIndex + 1, end);
+			quickSortInt(list, beginning, (partIndex - 1));
+			quickSortInt(list, (partIndex + 1), end);
 		}
+
 	}
 }
 
